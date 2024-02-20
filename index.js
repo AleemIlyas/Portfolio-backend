@@ -14,23 +14,23 @@ const AdminRouter = require('./src/Routers/Admin')
 
 const port = process.env.PORT
 
-app.use( cors({
-    origin : 'http://localhost:5173',
-    credentials : true
-}) )
+app.use(cors({
+    origin: '*',
+    credentials: true
+}))
 app.use(express.json());
 app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended:false}))
-app.use('/Images' , express.static('Images') )
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use('/Images', express.static('Images'))
 app.use(passport.initialize())
 require('./src/Auth/Auth.js')
 app.use(projectRouters)
 app.use(AdminRouter)
 
-// app.use('/',(req,res)=>{
-//   res.send('Hello World')
-// })
+app.use('/', (req, res) => {
+    res.send('Hello World')s
+})
 
-app.listen(port , ()=>{
+app.listen(port, () => {
     console.log(`listening at http://localhost:${port}`)
 })
