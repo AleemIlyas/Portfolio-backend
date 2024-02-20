@@ -28,7 +28,7 @@ app.use(projectRouters)
 app.use(AdminRouter)
 
 app.use('/', (req, res) => {
-    res.send('Hello World')s
+    res.send('Hello World')
 })
 
 app.listen(port, () => {
