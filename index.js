@@ -15,7 +15,7 @@ const AdminRouter = require('./src/Routers/Admin')
 const port = process.env.PORT
 
 app.use(cors({
-    origin: 'https://aleemilyas.github.io/Portfolio/',
+    origin: 'https://aleemilyas.github.io/',
     credentials: true
 }))
 app.use(express.json());
